@@ -36,3 +36,4 @@ for cycle in nx.simple_cycles(G):  # iteracja przez cykle
     all_work += min(praca1, praca2)  # suma minimalnej pracy wykonanej przez wszystkie cykle
 
 print(all_work)
+f.close()
