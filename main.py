@@ -34,15 +34,13 @@ G = nx.DiGraph(edges)
 
 for cycle in nx.simple_cycles(G):
     cycle
+    
+    cycle = [wag.get(item, item) for item in cycle]
+    cycle = list(map(int, cycle))
 
-    if len(cycle) <= 1:
-        work = 0
-    else:
-        cycle = [wag.get(item, item) for item in cycle]
-        cycle = list(map(int, cycle))
-
-        praca = sum(item for item in cycle) + (len(cycle) - 2) * (min(cycle))
-        all_work += praca
+    praca1 = sum(item for item in cycle) + (len(cycle) - 2) * (min(cycle))
+    praca2 = sum(item for item in cycle) + min(cycle) + (len(cycle) + 1) * min(wagi) 
+    all_work += min(praca1, praca2) 
 
 print(all_work)
 
